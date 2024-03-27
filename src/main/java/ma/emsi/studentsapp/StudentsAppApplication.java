@@ -52,25 +52,18 @@ public class StudentsAppApplication implements CommandLineRunner {
           });
           System.out.println("******************");
           System.out.println("------------------");
-          //Mettre à jour un produit
-          Product product1=productRepository.updateById(Long.valueOf(3));
-          product1.toString();;
 
-
-
-
-
-
-
-
-        List<Product> productList3=productRepository.findByPriceGreaterThan(3000);
-        productList3.forEach(p-> {
-            System.out.println(p);
-        });
+          List<Product> productList3=productRepository.findByPriceGreaterThan(3000);
+          productList3.forEach(p-> {
+              System.out.println(p);
+          });
+          System.out.println("******************");
+          System.out.println("------------------");
+          List<Product> productList4=productRepository.searchByPrice(3000);
+          productList4.forEach(p-> {
+              System.out.println(p);
+          });
+        System.out.println("******************");
         System.out.println("------------------");
-        List<Product> productList4=productRepository.searchByPrice(3000);
-        productList4.forEach(p-> {
-            System.out.println(p);
-        });
     }
 }
